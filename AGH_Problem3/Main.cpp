@@ -2,6 +2,7 @@
 #include "Sklep.h"
 #include <fstream>
 #include <vector>
+#include <sstream>
 
 bool WczytajZPliku(Wektor<Firma>&);
 
@@ -42,14 +43,15 @@ int main(){
 		(iter++).WypiszWszystkie();
 	}
 
-	system("PAUSE");
+	cin.get();
+	cin.get();
 	return 0;
 }
 
 bool WczytajZPliku(Wektor<Firma>& wektor){
 	ifstream wejscie;
-	char *path = "wejscie.txt";
-	wejscie.open(path);
+	string path = "wejscie.txt";
+	wejscie.open(path.c_str());
 	if (!wejscie)
 		return false;
 	string buforNazwaFirmy;
@@ -61,7 +63,12 @@ bool WczytajZPliku(Wektor<Firma>& wektor){
 		wejscie >> buforNazwaFirmy;
 		wejscie >> ulicaSklepu;
 		wejscie >> numerSklepu;
-		ulicaSklepu = ulicaSklepu + " " + to_string(numerSklepu);
+		//********************** KONWERSJA int DO string
+		ostringstream ss;
+		ss << numerSklepu;
+		string numerSklepuString = ss.str();
+		//**********************
+		ulicaSklepu = ulicaSklepu + " " + numerSklepuString;
 		for (i = 0; i < wektor.Size(); i++)
 		{
 			if (wektor[i].nazwaFirmy == buforNazwaFirmy){
