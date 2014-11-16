@@ -1,4 +1,3 @@
-#include"WektorHeader.h"
 #include "Sklep.h"
 #include <fstream>
 #include <vector>

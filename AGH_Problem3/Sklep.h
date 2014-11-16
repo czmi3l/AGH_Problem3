@@ -3,9 +3,7 @@
 
 #define ILOSC_ZABAWEK_NA_SKLEP 20
 #define ILOSC_SKLEPOW_NA_FIRME 20
-#include <iostream>
 #include "WektorHeader.h"
-#include <string>
 
 using namespace std;
 
