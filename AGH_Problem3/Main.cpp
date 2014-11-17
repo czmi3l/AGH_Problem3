@@ -1,7 +1,5 @@
 #include "Sklep.h"
-#include <fstream>
-#include <vector>
-#include <sstream>
+
 
 bool WczytajZPliku(Wektor<Firma>&);
 
@@ -14,7 +12,7 @@ int main(){
 
 	if (WczytajZPliku(wektor))
 		cout << "Wczytano dane z pliku!" << endl;
-	cout << "[Sklep] [Zabawka] [Cena] " << endl;
+	cout << "[Sklep] [Zabawka] [Cena] [q - aby zakonczyc]" << endl;
 	while (buforNaFirme != "q"){
 		cin >> buforNaFirme;
 		if (buforNaFirme == "q")
@@ -36,6 +34,7 @@ int main(){
 		wektor[i].WypiszWszystkie();
 	}*/
 
+	//Wersja Iteratorowa:
 	Wektor<Firma>::Iterator iter = wektor.begin();
 	while (iter != wektor.end())
 	{

@@ -20,6 +20,10 @@ Zabawka& Zabawka::operator=(const Zabawka& zabawka){
 	return *this;
 }
 
+ostream& operator<<(ostream& os, const Zabawka& zabawka){
+	return os << zabawka.nazwa << "  " << zabawka.cena;
+}
+
 Sklep::Sklep(string uSklepu){
 	ulica = uSklepu;
 }

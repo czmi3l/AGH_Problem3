@@ -17,35 +17,33 @@ public:
 	Zabawka(const Zabawka& zabawka);
 	void WypiszZabawke();
 	Zabawka& operator=(const Zabawka& zabawka);
-	friend ostream& operator<<(ostream& os, const Zabawka& zabawka){
-		return os << zabawka.nazwa << "  " << zabawka.cena;
-	}
+	friend ostream& operator<<(ostream& os, const Zabawka& zabawka);
 };
 
 class Sklep{
 private:
 	Wektor < Zabawka > zabawki;
+	string ulica;
 
 public:
 	Sklep(){}
 	Sklep(string uSklepu);
 	Sklep(const Sklep& sklep);
-	string ulica;
 	void WypiszWszystkie();
 	void DodajZabawke(Zabawka zabawka);
 	Sklep& operator=(const Sklep& sklep);
 };
 
 class Firma{
-public:
 	Wektor<Sklep> sklepy;
+public:
+	string nazwaFirmy;
 	Firma(){}
 	Firma(string nFirmy, string uSklepu);
 	Firma(const Firma& firma);
 	void WypiszWszystkie();
 	void DodajSklep(string ulica);
 	void DodajZabawke(string nazwa, double cena);
-	string nazwaFirmy;
 	Firma& operator=(const Firma& sklep);
 	
 };
