@@ -76,7 +76,7 @@ Wektor<T>::~Wektor(){
 
 template<class T>
 Wektor<T>::Wektor(const Wektor& wektor){
-
+	//Nie potrzebne
 }
 
 template<class T>
