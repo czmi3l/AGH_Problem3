@@ -27,8 +27,8 @@ public:
 	void Erase();
 	int Size() const;
 	T& operator[](int i) const;
-	class Iterator;
-	friend class Iterator;
+	//class Iterator;
+	//friend class Iterator;
 	class Iterator{
 		Wektor& wektor;
 		int index;
